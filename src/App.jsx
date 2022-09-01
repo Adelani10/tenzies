@@ -61,17 +61,17 @@ function App() {
   }, [diceData])
 
   return (
-    <div className="w-full h-3/4 md:w-1/2 p-3 bg-[#0B2434] rounded-md">
+    <div className="w-full h-3/4 md:w-1/2 p-4 bg-neutral-400 rounded-md shadow-md shadow-black">
       {tenzies && <Confetti/> }
-      <div className="h-full px-4 bg-[#F5F5F5] flex flex-col justify-center space-y-4">
-        <h1 className="text-2xl md:text-4xl font-bold text-center">Tenzies</h1>
+      <div className="h-full px-4 bg-[#F5F5F5] flex flex-col justify-center rounded-xl space-y-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-center">Tenzies</h1>
         <p className="text-zinc-400 text-lg md:text-xl">
           Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
         </p>
         <main className="w-full grid grid-cols-5 gap-3 pb-12">
             {diceElement}
         </main>
-        <button onClick={handleClick} className="py-3 w-1/2 mx-auto rounded-lg font-bold text-2xl bg-sky-300 hover:text-white hover:bg-[#0B2434] tracking-widest">{tenzies ? "New Game" : "Roll"}</button>
+        <button onClick={handleClick} className="py-3 w-1/2 mx-auto rounded-lg font-bold text-2xl bg-sky-300 hover:text-white hover:bg-zinc-700 tracking-widest">{tenzies ? "New Game" : "Roll"}</button>
       </div>
     </div>
   )
