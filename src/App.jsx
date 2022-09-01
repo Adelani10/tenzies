@@ -61,7 +61,7 @@ function App() {
   }, [diceData])
 
   return (
-    <div className="w-full h-3/4 md:w-1/2 p-6 bg-[#0B2434] rounded-md">
+    <div className="w-full h-3/4 md:w-1/2 p-3 bg-[#0B2434] rounded-md">
       {tenzies && <Confetti/> }
       <div className="h-full px-4 bg-[#F5F5F5] flex flex-col justify-center space-y-4">
         <h1 className="text-2xl md:text-4xl font-bold text-center">Tenzies</h1>
