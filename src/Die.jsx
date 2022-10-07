@@ -8,7 +8,7 @@ export default function Die(props) {
         backgroundColor: props.isHeld ? "#59E391" : "white"
     }
     return (
-            <h1 style={styles} onClick={props.holdDice} className="cursor-pointer h-[10vh] box-border flex justify-center items-center font-bold text-2xl md:text-4xl shadow-md shadow-black rounded-lg">
+            <h1 style={styles} onClick={props.holdDice} className="cursor-pointer py-4  box-border flex justify-center items-center font-bold text-2xl md:text-4xl shadow-md shadow-black rounded-md">
                 {props.value}
             </h1>
         )

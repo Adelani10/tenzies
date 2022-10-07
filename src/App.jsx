@@ -12,7 +12,6 @@ function App() {
   const [diceData, setDiceData] = useState(allNewDice())
   const [tenzies, setTenzies] = useState(false)
   const [count, setCount] = useState(0)
-  const [time, setTime] = useState(0)
 
   
   function generateDice() {
@@ -58,11 +57,7 @@ function App() {
     }
   }
 
-  useEffect(()=> {
-      setInterval(()=> {
-        setTime(prevTime => prevTime + 1)
-      }, 1500)
-  }, [])
+  
         
   useEffect(()=>{
     // console.log("You won")
@@ -76,31 +71,26 @@ function App() {
   }, [diceData])
 
   return (
-    <div className="w-full h-3/4 md:w-1/2 p-4 bg-neutral-400 rounded-md shadow-md shadow-black">
+    <div className="w-full md:w-1/2 p-4  bg-neutral-400 rounded-md shadow-md shadow-black">
       {tenzies && <Confetti/> }
-      <div className="h-full px-4 bg-[#F5F5F5] flex flex-col justify-center rounded-xl space-y-4 relative">
-        
-        <section className="flex items-center" >
-            {!tenzies && <p className="absolute top-0 right-4 md:text-lg text-zinc-500 tracking-tighter md:tracking-widest">Number of Rolls- <span className="font-bold text-sky-400">{count}</span></p>}
+      <div className="px-4 pb-8 bg-[#F5F5F5] flex flex-col justify-center rounded-md space-y-4 ">
 
-            {!tenzies && <p className="absolute top-0 left-4 md:text-lg text-zinc-500 tracking-tighter md:tracking-widest">
-              Time [seconds] :
-              <span className="font-bold text-red-800"> {time}</span>
-            </p>}
-        </section>
+          {!tenzies && <p className="md:text-lg text-zinc-500 md:tracking-widest self-end">Number of Rolls- <span className="font-bold text-sky-400">{count}</span></p>}
         
         
 
-        <h1 className="text-4xl md:text-5xl font-bold text-center">Tenzies</h1>
+        <h1 className="text-4xl md:text-5xl font-bold place-self-center">Tenzies</h1>
 
         {!tenzies && <p className="text-zinc-400 text-lg md:text-xl">
           Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
         </p>}
 
-        {!tenzies ? <main className="w-full grid grid-cols-5 gap-3 pb-12">
+        {!tenzies ? <main className="w-full grid grid-cols-5 md:grid-cols-4 lg:grid-cols-5 gap-2">
              {diceElement} 
-        </main> : <h2 className="text-2xl text-zinc-500 text-center">Yayyy! You won with {count} Rolls, in {scoreTime} seconds</h2>}
-        <button onClick={handleClick} className="py-3 w-1/2 mx-auto rounded-lg font-bold text-2xl bg-sky-300 hover:text-white hover:bg-zinc-700 tracking-widest">{tenzies ? "New Game" : "Roll"}</button>
+        </main> : <h2 className="text-2xl text-zinc-500 text-center">Yayyy! You won with {count} Rolls</h2>}
+
+        <h1 className="h-4"></h1>
+        <button onClick={handleClick} className="py-3 px-12 md:px-24 place-self-center rounded-md font-bold text-2xl bg-sky-300 hover:text-white hover:bg-zinc-700 tracking-widest">{tenzies ? "New Game" : "Roll"}</button>
       </div>
     </div>
   )
