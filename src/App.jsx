@@ -75,7 +75,12 @@ function App() {
       {tenzies && <Confetti/> }
       <div className="px-4 pb-8 bg-[#F5F5F5] flex flex-col justify-center rounded-md space-y-4 ">
 
-          {!tenzies && <p className="md:text-lg text-zinc-500 md:tracking-widest self-end">Number of Rolls- <span className="font-bold text-sky-400">{count}</span></p>}
+          {!tenzies && 
+            <div className="flex justify-between">
+              <h3>Let's see how you do <span className="text-red-600 text-xl font-semibold">Andy!</span></h3>
+              <p className="md:text-lg text-zinc-500 md:tracking-widest self-end">Number of Rolls- <span className="font-bold text-sky-400">{count}</span></p>
+            </div>
+          }
         
         
 
