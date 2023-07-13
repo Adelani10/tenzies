@@ -77,7 +77,7 @@ function App() {
 
           {!tenzies && 
             <div className="flex justify-between">
-              <h3>Let's see how you do <span className="text-red-600 text-xl font-semibold">Andy!</span></h3>
+              <h3>Let's see how you do <span className="text-red-600 text-xl font-semibold">buddy!</span></h3>
               <p className="md:text-lg text-zinc-500 md:tracking-widest self-end">Number of Rolls- <span className="font-bold text-sky-400">{count}</span></p>
             </div>
           }
